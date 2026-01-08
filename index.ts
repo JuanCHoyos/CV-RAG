@@ -117,7 +117,6 @@ const main = async () => {
   console.log(chalk.yellow("You can now ask questions about the CV document. Type 'exit' to quit."));
   while (true) {
     const question = await rl.question("Question: ");
-    console.log(question)
     if (question === "exit") break;
     const response = await agent.invoke({
       messages: [new HumanMessage({ content: question })]

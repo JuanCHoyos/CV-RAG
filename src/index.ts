@@ -52,7 +52,7 @@ const vectorStore = new MemoryVectorStore(embeddings);
 
 const retrieve = tool(
   async ({ query }) => {
-    const retrievedDocs = await vectorStore.similaritySearch(query, 2);
+    const retrievedDocs = await vectorStore.similaritySearch(query, 4);
     const serialized = retrievedDocs
       .map(
         (doc) => `Source: ${doc.metadata.source}\nContent: ${doc.pageContent}`
